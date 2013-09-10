@@ -5,3 +5,7 @@ Single Responsibility (S) and Dependency Inversion (D).
 
 ## Iteration Zero
 Get your development environment set up and make sure it works.  Added a simple passing and failing test.
+
+## Iteration 1
+
+Create a CheckingAccount that allows us to view our current balance
