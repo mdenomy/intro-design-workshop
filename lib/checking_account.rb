@@ -1,7 +1,23 @@
 class CheckingAccount
 
+	def initialize
+		@balance = 0
+	end
+
 	def balance
-		0
+		@balance
+	end
+
+	def deposit(amount)
+		@balance += amount
+	end
+
+	def process_check(amount)
+		return false if amount > balance
+		if amount <= @balance 
+			@balance -= amount
+			true
+		end
 	end
 
 end
