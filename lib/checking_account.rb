@@ -14,10 +14,8 @@ class CheckingAccount
 
 	def process_check(amount)
 		return false if amount > balance
-		if amount <= @balance 
-			@balance -= amount
-			true
-		end
+		@balance -= amount
+		true
 	end
 
 end

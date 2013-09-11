@@ -22,14 +22,21 @@ describe "CheckingAccount" do
 		@account.balance.should eql 40
 	end
 
-	it "returns true if sufficient funds" do
-		@account.deposit(100)
-		@account.process_check(100).should be true
-	end
+	describe "Checks for sufficient funds" do
 
-	it "returns false if insufficient funds" do
-		@account.deposit(100)
-		@account.process_check(101).should be false
+		INITIAL_BALANCE = 100
+
+		before(:each) do
+			@account.deposit(INITIAL_BALANCE)
+		end 
+
+		it "returns true if sufficient funds" do
+			@account.process_check(INITIAL_BALANCE).should be true
+		end
+
+		it "returns false if insufficient funds" do
+			@account.process_check(INITIAL_BALANCE + 1).should be false
+		end
 	end
 
 end
