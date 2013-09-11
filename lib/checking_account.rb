@@ -13,9 +13,15 @@ class CheckingAccount
 	end
 
 	def process_check(amount)
-		return false if amount > balance
+		return false if insufficient_funds?(amount)
 		@balance -= amount
 		true
+	end
+
+	private 
+
+	def insufficient_funds?(amount)
+		amount > balance
 	end
 
 end

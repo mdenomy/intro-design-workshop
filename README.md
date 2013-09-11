@@ -20,4 +20,9 @@ Now time to start thinking about some design decisions, like what happens if not
 *   raise an exception
 
 For now, since we don't know too much about our system, let's keep it simple and return true/false
+
+> A private method is a class waiting to happen - Corey Hanes?
+
+IMO, this private method isn't interesting enough yet…but sit tight
+
  
