@@ -31,11 +31,11 @@ describe "CheckingAccount" do
 		end 
 
 		it "returns true if sufficient funds" do
-			@account.process_check(INITIAL_BALANCE).should be true
+			@account.process_check(INITIAL_BALANCE).should be_true
 		end
 
 		it "returns false if insufficient funds" do
-			@account.process_check(INITIAL_BALANCE + 1).should be false
+			@account.process_check(INITIAL_BALANCE + 1).should be_false
 		end
 	end
 
