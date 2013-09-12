@@ -17,6 +17,10 @@ class CheckingAccount
 		@balance -= amount
 	end
 
+	def apply_fees
+		@balance -= 5 if @balance < 500
+	end
+
 	private 
 
 	def insufficient_funds?(amount)

@@ -39,4 +39,12 @@ describe "CheckingAccount" do
 		end
 	end
 
+	describe 'Apply fees' do
+		it 'applies $5 fee if balance is below $500' do
+			@account.deposit(499)
+			@account.apply_fees
+			@account.balance.should eql 494
+		end
+	end
+
 end

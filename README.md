@@ -25,4 +25,8 @@ For now, since we don't know too much about our system, let's keep it simple and
 
 IMO, this private method isn't interesting enough yet…but sit tight
 
- 
+## Iteration 3
+Bank needs to make money.  Interest rates are low, so how can the bank get money....fees
+
+Add a method to apply_fees to the bank account and charge a fee of $5 if the balance is less than 500 dollars
+
