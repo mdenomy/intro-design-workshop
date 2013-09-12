@@ -30,3 +30,9 @@ Bank needs to make money.  Interest rates are low, so how can the bank get money
 
 Add a method to apply_fees to the bank account and charge a fee of $5 if the balance is less than 500 dollars
 
+Also refactored it a bit to add another private method.  
+
+Questions: What is our checking account doing now, deposit, processing checks, and applying fees.  What happens if fee algorithm changes....we need to change the CheckingAccount.
+
+Let's tackle that in our next few iterations.
+

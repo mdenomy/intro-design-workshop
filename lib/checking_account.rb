@@ -1,5 +1,8 @@
 class CheckingAccount
 
+	LOW_BALANCE_FEE = 5
+	MINIMUM_BALANCE = 500
+
 	def initialize
 		@balance = 0
 	end
@@ -18,13 +21,17 @@ class CheckingAccount
 	end
 
 	def apply_fees
-		@balance -= 5 if @balance < 500
+		apply_low_balance_fee
 	end
 
 	private 
 
 	def insufficient_funds?(amount)
 		amount > balance
+	end
+
+	def apply_low_balance_fee
+		@balance -= LOW_BALANCE_FEE if @balance < MINIMUM_BALANCE
 	end
 
 end
