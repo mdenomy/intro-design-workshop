@@ -64,9 +64,13 @@ The mechanism that we used to do this was *dependency injection*.  We injected t
 
 This has the added benefit of making our tests less brittle, and in fact even renders some of the tests obsolete, which we will address in the next iteration
 
+## Iteration 8
+The tests in CheckingAccount for student account and big spender don't add any value that isn't addressed by the default case, since the CheckingAccount now doesn't need to know about MinimumBalanceFee.
+
+Deleting code should feel good.
 
 
-we do that in this case by injecting the dependency  
+  
 
 
 

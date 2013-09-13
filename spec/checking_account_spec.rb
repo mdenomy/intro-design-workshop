@@ -41,39 +41,12 @@ describe "CheckingAccount" do
 
 	describe 'Apply fees' do
 
-		it 'applies $5 fee if balance is below $500' do
+		it 'applies minimum balance fee' do
 			account = CheckingAccount.new( MinimumBalanceFee.new(5, 500))
 			account.deposit(499)
 			account.apply_fees
 			account.balance.should eql 494
 		end
-
-		it 'student account minimum password is $100' do
-			minimum_balance_fee = MinimumBalanceFee.new(5, 100)
-			account_in_good_standing = CheckingAccount.new(minimum_balance_fee)
-			account_in_good_standing.deposit(100)
-			account_in_good_standing.apply_fees
-			account_in_good_standing.balance.should eql 100
-
-			low_balance_student_account = CheckingAccount.new(minimum_balance_fee)
-			low_balance_student_account.deposit(99)
-			low_balance_student_account.apply_fees
-			low_balance_student_account.balance.should eql 94
-		end
-
-		it 'big spender account minimum password is $1000' do
-			minimum_balance_fee = MinimumBalanceFee.new(5, 1000)
-			account_in_good_standing = CheckingAccount.new(minimum_balance_fee)
-			account_in_good_standing.deposit(1000)
-			account_in_good_standing.apply_fees
-			account_in_good_standing.balance.should eql 1000
-
-			low_balance_student_account = CheckingAccount.new(minimum_balance_fee)
-			low_balance_student_account.deposit(999)
-			low_balance_student_account.apply_fees
-			low_balance_student_account.balance.should eql 994
-		end
-
 	end
 
 end
