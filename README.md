@@ -46,6 +46,14 @@ Things are a *little* better, but CheckingAccount is still tightly coupled to Fe
 ## Iteration 5
 We decided to have the checking account initialize method take a level, the tests pass, it works...but YUCK.
 
+## Iteration 6
+We cleaned things up a little, and maybe we think things are "better" but we haven't solved the fundamental issue.  
+
+*  Checking account still knows too much about things that are not about a checking account.
+*  Tests are brittle
+*  Things are only going to get worse
+
+
 
 
 
