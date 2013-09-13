@@ -43,6 +43,9 @@ Single responsibility says a class should only have 1 reason to change.  If we d
 
 Things are a *little* better, but CheckingAccount is still tightly coupled to Fees, it defines the minimum balance and penalty.  What if we had 2 levels of accounts, e.g. a Student account with a minimum balance of $100 and a BigDeal account with a minimum balance of $1000.  How would we do that
 
+## Iteration 5
+We decided to have the checking account initialize method take a level, the tests pass, it works...but YUCK.
+
 
 
 

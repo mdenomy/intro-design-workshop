@@ -3,11 +3,20 @@ require 'minimum_balance_fee'
 class CheckingAccount
 
 	LOW_BALANCE_FEE = 5
-	MINIMUM_BALANCE = 500
+	DEFAULT_MINIMUM_BALANCE = 500
+	STUDENT_MINIMUM_BALANCE = 100
+	BIG_SPENDER_MINIMUM_BALANCE = 1000
 
-	def initialize
+	def initialize(level = nil)
 		@balance = 0
-		@low_balance_fee = MinimumBalanceFee.new(LOW_BALANCE_FEE, MINIMUM_BALANCE)
+		case level
+		when :student
+			@low_balance_fee = MinimumBalanceFee.new(LOW_BALANCE_FEE, STUDENT_MINIMUM_BALANCE)
+		when :big_spender
+			@low_balance_fee = MinimumBalanceFee.new(LOW_BALANCE_FEE, BIG_SPENDER_MINIMUM_BALANCE)
+		else
+			@low_balance_fee = MinimumBalanceFee.new(LOW_BALANCE_FEE, DEFAULT_MINIMUM_BALANCE)
+		end
 	end
 
 	def balance
