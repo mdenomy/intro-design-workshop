@@ -53,6 +53,20 @@ We cleaned things up a little, and maybe we think things are "better" but we hav
 *  Tests are brittle
 *  Things are only going to get worse
 
+## Iteration 7
+Checking account has a dependency on MinimumBalanceFee.  Instead of depending on a minimum balance fee, and needing to know how it is constructed, what if we just depended on something more abstract that has an apply method that knows how to calculate a fee based on the account.
+
+We have inverted the dependency, now the high level module (CheckingAccount) is no longer dependent on a lower level module (LowBalanceFee).  In fact both are dependent on abstractions
+CheckingAccount depends on something that can *apply* a fee
+MinimumBalanceFee depends on something that can provide a *balance*
+
+The mechanism that we used to do this was *dependency injection*.  We injected the low level dependency into the high level module.
+
+This has the added benefit of making our tests less brittle, and in fact even renders some of the tests obsolete, which we will address in the next iteration
+
+
+
+we do that in this case by injecting the dependency  
 
 
 
