@@ -36,3 +36,13 @@ Questions: What is our checking account doing now, deposit, processing checks, a
 
 Let's tackle that in our next few iterations.
 
+## Iteration 4
+Now we have a CheckingAccount that manages a balance AND applies balance.
+
+Single responsibility says a class should only have 1 reason to change.  If we decide that the way we calculate fees changes the checking account will change as well.
+
+Things are a *little* better, but CheckingAccount is still tightly coupled to Fees, it defines the minimum balance and penalty.  What if we had 2 levels of accounts, e.g. a Student account with a minimum balance of $100 and a BigDeal account with a minimum balance of $1000.  How would we do that
+
+
+
+
