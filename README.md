@@ -69,7 +69,10 @@ The tests in CheckingAccount for student account and big spender don't add any v
 
 Deleting code should feel good.
 
+## Iteration 9
+Bank still isn't making enough money.  Decides to charge an online banking fee.
 
+Decide to use a generic flat fee, since nothing really special about the online banking fee, i.e. doesn't check that we used it or how often we used it
   
 
 
