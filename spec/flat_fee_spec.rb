@@ -13,4 +13,10 @@ describe "Flat Fee" do
 		fee.description.should eql "Online banking fee"
 	end
 
+	it "does nothing with the account" do
+		account = double
+		fee = FlatFee.new(5, "Online banking fee")
+		fee.calculate(account).should eql 5
+	end
+
 end

@@ -5,7 +5,7 @@ class FlatFee
 		@description = description
 	end
 
-	def calculate
+	def calculate(account=nil)
 		@penalty
 	end
 

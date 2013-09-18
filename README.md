@@ -77,7 +77,12 @@ Decide to use a generic flat fee, since nothing really special about the online 
 ## Iteration 10
 Before we get into integrating more fees, something has been bugging me.  I don't like the name 'apply' on the Fees.  It isn't really applying anything.  Naming things is important, especially when defining your interfaces.  How about calculate, that suits me better.
  
+## Iteration 11
+Noticed that the fees have different calculate signatures.  One takes an argument (account) one takes no arguments.
 
+Are these the same interface....I think they are.  My intention is that these are fees that know how to calculate the penalty given an account.  The fact that the flat fee doesn't need any account into may make it something of an outlier, but I am going to argue that adding the account to the signature is not a big deal.  You are free to disagree, but that is how I am going to handle it.
+
+So I changed the signature of FlatFee's calculate to take an account.
  
 
 
