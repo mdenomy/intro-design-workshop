@@ -2,6 +2,7 @@
 This is the code for a workshop on incremental design and SOLID design principles, primarily
 Single Responsibility (S) and Dependency Inversion (D).
 
+*Note: all the iterations are available as separate git branches, except iteration-2 and iteration-9, which are git tags due to the author experiencing a brain cramp and not creating a feature branches for those iterations*
 
 ## Iteration Zero
 Get your development environment set up and make sure it works.  Added a simple passing and failing test.
