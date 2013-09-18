@@ -84,6 +84,11 @@ Are these the same interface....I think they are.  My intention is that these ar
 
 So I changed the signature of FlatFee's calculate to take an account.
  
+## Iteration 12
+Now we can change account to take multiple fees on creation.
+
+Notice that account now doesn't need to require any fee files
+
 
 
 

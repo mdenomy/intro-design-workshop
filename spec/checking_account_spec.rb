@@ -1,5 +1,7 @@
 require 'spec_helper'
 require 'checking_account'
+require 'minimum_balance_fee'
+require 'flat_fee'
 
 describe "CheckingAccount" do 
 
@@ -46,6 +48,14 @@ describe "CheckingAccount" do
 			account.deposit(499)
 			account.apply_fees
 			account.balance.should eql 494
+		end
+
+		it 'applies multiple fees' do
+			fees = [MinimumBalanceFee.new(5, 500), FlatFee.new(2, "Monthly service charge"), FlatFee.new(10, "Online banking fee")]
+			account = CheckingAccount.new(fees)
+			account.deposit(499)
+			account.apply_fees
+			account.balance.should eql 482
 		end
 	end
 
