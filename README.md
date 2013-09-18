@@ -89,6 +89,11 @@ Now we can change account to take multiple fees on creation.
 
 Notice that account now doesn't need to require any fee files
 
+## Iteration 13
+No reason to include any concrete fees in the checking account test class.  Having them there unnecessarily couples them and makes them more brittle.
+
+Now we are using mocks, is that better or worse.  In this case I think it is better, but understand what you are getting into.  In this case I want to not be coupled to particular fees, but I have also lost some "integration" test coverage.
+
 
 
 

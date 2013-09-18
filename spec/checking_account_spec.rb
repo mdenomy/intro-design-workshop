@@ -1,7 +1,5 @@
 require 'spec_helper'
 require 'checking_account'
-require 'minimum_balance_fee'
-require 'flat_fee'
 
 describe "CheckingAccount" do 
 
@@ -43,15 +41,21 @@ describe "CheckingAccount" do
 
 	describe 'Apply fees' do
 
-		it 'applies minimum balance fee' do
-			account = CheckingAccount.new( MinimumBalanceFee.new(5, 500))
+		it 'applies single fee' do
+			fee = double
+			fee.stub(:calculate) {5}
+			account = CheckingAccount.new(fee)
 			account.deposit(499)
 			account.apply_fees
 			account.balance.should eql 494
 		end
 
 		it 'applies multiple fees' do
-			fees = [MinimumBalanceFee.new(5, 500), FlatFee.new(2, "Monthly service charge"), FlatFee.new(10, "Online banking fee")]
+			fees = []
+			[5, 2, 10].each_with_index do |penalty,index|
+				fees << double
+				fees[index].stub(:calculate) {penalty}
+			end
 			account = CheckingAccount.new(fees)
 			account.deposit(499)
 			account.apply_fees
