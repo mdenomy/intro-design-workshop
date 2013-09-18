@@ -73,7 +73,12 @@ Deleting code should feel good.
 Bank still isn't making enough money.  Decides to charge an online banking fee.
 
 Decide to use a generic flat fee, since nothing really special about the online banking fee, i.e. doesn't check that we used it or how often we used it
-  
+
+## Iteration 10
+Before we get into integrating more fees, something has been bugging me.  I don't like the name 'apply' on the Fees.  It isn't really applying anything.  Naming things is important, especially when defining your interfaces.  How about calculate, that suits me better.
+ 
+
+ 
 
 
 

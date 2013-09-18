@@ -5,7 +5,7 @@ describe "Flat Fee" do
 
 	it "unconditionally applies a penalty" do
 		fee = FlatFee.new(5, "Online banking fee")
-		fee.apply.should eql 5
+		fee.calculate.should eql 5
 	end
 
 	it "has a description" do

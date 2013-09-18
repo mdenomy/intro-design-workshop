@@ -21,7 +21,7 @@ class CheckingAccount
 	end
 
 	def apply_fees
-		@balance -= @low_balance_fee.apply(self) if @low_balance_fee
+		@balance -= @low_balance_fee.calculate(self) if @low_balance_fee
 	end
 
 	private 
