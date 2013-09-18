@@ -94,6 +94,11 @@ No reason to include any concrete fees in the checking account test class.  Havi
 
 Now we are using mocks, is that better or worse.  In this case I think it is better, but understand what you are getting into.  In this case I want to not be coupled to particular fees, but I have also lost some "integration" test coverage.
 
+## Iteration 14
+Can create a sample application that shows accounts for different clients.
+
+All the logic for what fees are applied is outside of the CheckingAccount, can use a factory to construct the accounts.
+
 
 
 
